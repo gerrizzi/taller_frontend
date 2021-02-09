@@ -10,6 +10,9 @@ import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import AgeOfEmpires from './components/AgeOfEmpires';
 import Civilization from './components/Civilization';
+import Login from './components/Login';
+import Signin from './components/Signin';
+import MyExercises from './components/MyExercises';
 
 function App() {
   return (
@@ -19,14 +22,14 @@ function App() {
           <Route path="/" exact>
             <Home></Home>
           </Route>
-          <Route path="/Dashboard">
-            <Dashboard></Dashboard>
+          <Route path="/Login">
+            <Login></Login>
           </Route>
-          <Route path="/AgeOfEmpires" exact>
-            <AgeOfEmpires></AgeOfEmpires>
+          <Route path="/Signin">
+            <Signin></Signin>
           </Route>
-          <Route path="/AgeOfEmpires/:id">
-            <Civilization></Civilization>
+          <Route path="/MyExercises">
+            <MyExercises></MyExercises>
           </Route>
         </Switch>
       </div>

@@ -37,5 +37,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "bootstrap": "^4.6.0"
+  }
 }
