@@ -37,6 +37,26 @@ export default {
                 if (callBackSuccess != null) callBackSuccess(err);
                 else console.log("Error: ", err)
             });
+    },
+    GroupBy(list, keyGetter) {
+        const map = new Map();
+
+        list.forEach((item) => {
+             const key = keyGetter(item);
+             const collection = map.get(key);
+             if (!collection) {
+                 map.set(key, [item]);
+             } else {
+                 collection.push(item);
+             }
+        });
+
+        return map;
+    },
+    Sum(items, prop){
+        return items.reduce( function(a, b){
+            return a + b[prop];
+        }, 0);
     }
 };
 

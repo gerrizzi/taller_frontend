@@ -40,7 +40,7 @@ const Login = ({ history }) => {
                 </div>
                 <div className="col-12 form-group">
                     <label htmlFor="">Contraseña</label>
-                    <input type="text" className="form-control" onChange={changePassword} />
+                    <input type="password" className="form-control" onChange={changePassword} />
                 </div>
                 <div className="col-12 d-flex justify-content-center">
                     <button className="btn btn-primary col-12" onClick={btnLogin} >Aceptar</button>

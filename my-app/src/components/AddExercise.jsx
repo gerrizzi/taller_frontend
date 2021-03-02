@@ -15,7 +15,6 @@ const AddExercise = ({ trinningTypes, addExercise }) => {
     }
 
     const changeTrinningType = ({ target: { value } }) => {
-        console.log(value);
         setTrinningType(value);
     }
 
@@ -26,6 +25,10 @@ const AddExercise = ({ trinningTypes, addExercise }) => {
             alert("Faltan datos");
 
         addExercise({ trainning_type: parseInt(trinningType), weight: parseFloat(weight), minutes: parseFloat(minutes) });
+
+        setMinutes("");
+        setTrinningType("");
+        setWeight("");
     }
 
     return (
@@ -34,9 +37,13 @@ const AddExercise = ({ trinningTypes, addExercise }) => {
             <div className="form-row col-12">
                 <div className="form-group col-md-4">
                     <label htmlFor="trainning_type">Tipo de entrenamiento</label>
-                    <select className="form-control" name="trainning_type" id="trainning_type" onChange={changeTrinningType}>
+                    <select className="form-control" name="trainning_type" id="trainning_type" onChange={changeTrinningType} defaultValue={'DEFAULT'}>
                         <option value="" disabled="disabled" selected>Seleccione una opcion...</option>
-                        <option value="1">Test</option>
+                        <option value="1">Correr</option>
+                        <option value="2">Natacion</option>
+                        <option value="3">Futbol</option>
+                        <option value="4">Bici</option>
+                        <option value="5">Tennis</option>
                         {
                             trinningTypes &&
                             trinningTypes.map((e, i) => {

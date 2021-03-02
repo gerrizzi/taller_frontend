@@ -1,5 +1,5 @@
 import React from 'react';
-import api from '../utils/exercises-api';
+import ExercisesCount from "./ExercisesCount";
 
 const MyExercises = ({ exercises, deleteExercise, setTrinningType }) => {
     const setTrainningTypesToExercises = () => {
@@ -18,10 +18,14 @@ const MyExercises = ({ exercises, deleteExercise, setTrinningType }) => {
 
     return (
         <div>
-            <h2>Mis ejercicios</h2>
-            {
+            <div className="w-100 d-flex justify-content-between align-items-center">
+                <h2>Mis ejercicios</h2>
+                <ExercisesCount exercises={exercises} size="50px"></ExercisesCount>
+            </div>
+            <div style={{position: "relative", height: "500px", overflow: "auto", display: "block"}}>
+                {
                 exercises !== undefined && exercises.length > 0 &&
-                <table className="table">
+                <table className="table table-bordered table-striped" >
                     <thead>
                         <tr>
                             {
@@ -49,6 +53,11 @@ const MyExercises = ({ exercises, deleteExercise, setTrinningType }) => {
                     </tbody>
                 </table>
             }
+            {
+                (exercises === undefined || exercises == null || exercises.length == 0) &&
+                <p className="ml-2">Sin entrenamientos para mostrar.</p>
+            }
+            </div>
         </div>
     )
 }

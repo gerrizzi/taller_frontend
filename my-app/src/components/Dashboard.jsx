@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { AddExercise, AddExercises, UpdateExercise, DeleteExercise, AddTrinningType } from "../redux/actions/ExercisesActions";
 import MyExercises from "./MyExercises";
 import _AddExercise from "./AddExercise";
+import ExercisesMinutes_Chart from "./ExercisesMinutes_Chart";
+import IMC_Chart from "./IMC_Chart";
 import api from "../utils/exercises-api";
 
 const Dashboard = ({ Exercises, DeleteExercise, AddExercise, AddExercises }) => {
@@ -49,6 +51,8 @@ const Dashboard = ({ Exercises, DeleteExercise, AddExercise, AddExercises }) => 
             <hr className="mt-0" />
             <MyExercises exercises={Exercises} deleteExercise={_DeleteExercise} ></MyExercises>
             <_AddExercise trinningTypes={[]} addExercise={SaveExercise}></_AddExercise>
+            <ExercisesMinutes_Chart exercises={Exercises}></ExercisesMinutes_Chart>
+            <IMC_Chart exercises={Exercises}></IMC_Chart>
         </div>
     );
 }
